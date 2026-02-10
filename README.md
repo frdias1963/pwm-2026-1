@@ -1,3 +1,5 @@
+![Banner](banner.png)
+
 # Programação Web e Mobile – 2026.1
 
 Repositório oficial da disciplina ministrada pelo Prof. Flávio Dias.

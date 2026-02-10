@@ -1,4 +1,4 @@
-![Banner](banner.png)
+![Banner](banner.jpg)
 
 # Programação Web e Mobile – 2026.1
 

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimídia, Formatação e Tabelas</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        table { border-collapse: collapse; margin: 20px 0; }
+        th, td { border: 1px solid #333; padding: 10px; text-align: left; }
+        th { background-color: #1C7293; color: white; }
+        hr { margin: 30px 0; }
+        .exemplo { background-color: #E8F4F8; padding: 15px; margin: 15px 0; border-left: 4px solid #1C7293; }
+    </style>
+</head>
+<body>
+    <h1>Multimídia, Formatação e Tabelas em HTML</h1>
+    
+    <hr>
+    
+    <h2>1. Multimídia - Imagens</h2>
+    <div class="exemplo">
+        <p>Exemplo de imagem (substitua pelo caminho real):</p>
+        <img src="https://via.placeholder.com/300x200" alt="Imagem de exemplo" width="300" height="200">
+        <p><em>Nota: Esta é uma imagem de placeholder. Use src com caminho real.</em></p>
+    </div>
+    
+    <h2>2. Multimídia - Áudio</h2>
+    <div class="exemplo">
+        <p>Player de áudio HTML5:</p>
+        <audio controls>
+            <source src="audio.mp3" type="audio/mpeg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <p><em>Nota: Adicione um arquivo audio.mp3 no mesmo diretório para testar.</em></p>
+    </div>
+    
+    <h2>3. Multimídia - Vídeo</h2>
+    <div class="exemplo">
+        <p>Player de vídeo HTML5:</p>
+        <video width="400" height="300" controls>
+            <source src="video.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+        </video>
+        <p><em>Nota: Adicione um arquivo video.mp4 no mesmo diretório para testar.</em></p>
+    </div>
+    
+    <hr>
+    
+    <h2>4. Formatação de Texto</h2>
+    
+    <h3>Negrito e Itálico</h3>
+    <div class="exemplo">
+        <p>Texto com <b>negrito usando b</b> e <strong>negrito importante usando strong</strong></p>
+        <p>Texto com <i>itálico usando i</i> e <em>ênfase usando em</em></p>
+        <p>Texto <u>sublinhado usando u</u></p>
+    </div>
+    
+    <h3>Subscrito e Sobrescrito</h3>
+    <div class="exemplo">
+        <p>Fórmula química da água: H<sub>2</sub>O</p>
+        <p>Equação matemática: E = mc<sup>2</sup></p>
+        <p>Potência: 10<sup>3</sup> = 1000</p>
+    </div>
+    
+    <h3>Marcação e Alterações</h3>
+    <div class="exemplo">
+        <p>Texto com <mark>destaque importante</mark> usando mark</p>
+        <p>Preço original: <del>R$ 100,00</del> - Preço promocional: <ins>R$ 80,00</ins></p>
+    </div>
+    
+    <h3>Texto Pré-formatado</h3>
+    <div class="exemplo">
+        <pre>
+    Texto pré-formatado
+        mantém    espaços
+            e quebras de linha
+        exatamente como digitado
+        </pre>
+    </div>
+    
+    <hr>
+    
+    <h2>5. Tabelas Simples</h2>
+    <div class="exemplo">
+        <table>
+            <tr>
+                <td>Linha 1, Coluna 1</td>
+                <td>Linha 1, Coluna 2</td>
+            </tr>
+            <tr>
+                <td>Linha 2, Coluna 1</td>
+                <td>Linha 2, Coluna 2</td>
+            </tr>
+        </table>
+    </div>
+    
+    <h2>6. Tabelas com Cabeçalho</h2>
+    <div class="exemplo">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th>Cidade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>João</td>
+                    <td>25</td>
+                    <td>Recife</td>
+                </tr>
+                <tr>
+                    <td>Maria</td>
+                    <td>30</td>
+                    <td>São Paulo</td>
+                </tr>
+                <tr>
+                    <td>Pedro</td>
+                    <td>28</td>
+                    <td>Rio de Janeiro</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <h2>7. Tabelas com colspan (mesclar colunas)</h2>
+    <div class="exemplo">
+        <table>
+            <tr>
+                <th colspan="3">Horário de Aulas</th>
+            </tr>
+            <tr>
+                <th>Horário</th>
+                <th>Segunda</th>
+                <th>Terça</th>
+            </tr>
+            <tr>
+                <td>08:00 - 10:00</td>
+                <td>Programação Web</td>
+                <td>Banco de Dados</td>
+            </tr>
+            <tr>
+                <td>10:00 - 12:00</td>
+                <td colspan="2">Intervalo</td>
+            </tr>
+        </table>
+    </div>
+    
+    <h2>8. Tabelas com rowspan (mesclar linhas)</h2>
+    <div class="exemplo">
+        <table>
+            <tr>
+                <th>Disciplina</th>
+                <th>Professor</th>
+                <th>Horário</th>
+            </tr>
+            <tr>
+                <td rowspan="2">Programação Web</td>
+                <td rowspan="2">Prof. Silva</td>
+                <td>Segunda 08:00</td>
+            </tr>
+            <tr>
+                <td>Quarta 10:00</td>
+            </tr>
+            <tr>
+                <td>Banco de Dados</td>
+                <td>Prof. Santos</td>
+                <td>Terça 08:00</td>
+            </tr>
+        </table>
+    </div>
+    
+    <h2>9. Tabela Completa com Todos os Recursos</h2>
+    <div class="exemplo">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="4">Relatório de Vendas - Janeiro 2024</th>
+                </tr>
+                <tr>
+                    <th>Vendedor</th>
+                    <th>Produto</th>
+                    <th>Quantidade</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="2">João</td>
+                    <td>Mouse</td>
+                    <td>10</td>
+                    <td>R$ 500,00</td>
+                </tr>
+                <tr>
+                    <td>Teclado</td>
+                    <td>5</td>
+                    <td>R$ 750,00</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">Maria</td>
+                    <td>Monitor</td>
+                    <td>3</td>
+                    <td>R$ 2.100,00</td>
+                </tr>
+                <tr>
+                    <td>Webcam</td>
+                    <td>8</td>
+                    <td>R$ 800,00</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="3">Total Geral</th>
+                    <th>R$ 4.150,00</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    
+    <hr>
+    
+    <h2>Combinando Todos os Elementos</h2>
+    <div class="exemplo">
+        <p><strong>Oferta Especial!</strong></p>
+        <p>Preço normal: <del>R$ 199,90</del></p>
+        <p>Preço promocional: <ins><mark>R$ 149,90</mark></ins></p>
+        <p><em>Válido apenas hoje!</em></p>
+        <p>Fórmula do desconto: Desconto = Preço<sub>original</sub> - Preço<sub>final</sub></p>
+        <p>Economia de <strong>25%</strong> <sup>(1)</sup></p>
+        <p><small><sup>(1)</sup> Desconto calculado sobre o preço original</small></p>
+    </div>
+    
+    <footer style="margin-top: 50px; padding-top: 20px; border-top: 2px solid #1C7293;">
+        <p><em>Exemplo criado para a disciplina de Programação Web e Mobile</em></p>
+        <p><strong>Dica:</strong> Inspecione o código-fonte desta página (Ctrl+U) para ver como tudo foi construído!</p>
+    </footer>
+</body>
+</html>

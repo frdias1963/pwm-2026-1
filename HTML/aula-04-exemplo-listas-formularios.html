@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listas, iFrame e Formulários</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            max-width: 1000px;
+        }
+        h1 { color: #065A82; border-bottom: 3px solid #1C7293; padding-bottom: 10px; }
+        h2 { color: #1C7293; margin-top: 30px; }
+        .exemplo {
+            background-color: #E8F4F8;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid #1C7293;
+            border-radius: 5px;
+        }
+        fieldset {
+            border: 2px solid #1C7293;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        legend {
+            background-color: #1C7293;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px 0;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="radio"],
+        input[type="checkbox"] {
+            width: auto;
+            margin-right: 5px;
+        }
+        button {
+            background-color: #1C7293;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #065A82;
+        }
+        hr { margin: 40px 0; border: 1px solid #1C7293; }
+        iframe { border: 2px solid #1C7293; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>HTML - Listas, iFrame e Formulários</h1>
+    
+    <!-- ============================================ -->
+    <!-- LISTAS -->
+    <!-- ============================================ -->
+    
+    <h2>1. Listas Não Ordenadas (&lt;ul&gt;)</h2>
+    <div class="exemplo">
+        <p><strong>Exemplo de lista não ordenada:</strong></p>
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+        
+        <p><strong>Lista aninhada:</strong></p>
+        <ul>
+            <li>Frutas
+                <ul>
+                    <li>Maçã</li>
+                    <li>Banana</li>
+                    <li>Laranja</li>
+                </ul>
+            </li>
+            <li>Vegetais
+                <ul>
+                    <li>Cenoura</li>
+                    <li>Brócolis</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    
+    <h2>2. Listas Ordenadas (&lt;ol&gt;)</h2>
+    <div class="exemplo">
+        <p><strong>Lista numerada padrão:</strong></p>
+        <ol>
+            <li>Primeiro passo</li>
+            <li>Segundo passo</li>
+            <li>Terceiro passo</li>
+        </ol>
+        
+        <p><strong>Com letras maiúsculas (type="A"):</strong></p>
+        <ol type="A">
+            <li>Opção A</li>
+            <li>Opção B</li>
+            <li>Opção C</li>
+        </ol>
+        
+        <p><strong>Com letras minúsculas (type="a"):</strong></p>
+        <ol type="a">
+            <li>Item a</li>
+            <li>Item b</li>
+            <li>Item c</li>
+        </ol>
+        
+        <p><strong>Algarismos romanos maiúsculos (type="I"):</strong></p>
+        <ol type="I">
+            <li>Capítulo I</li>
+            <li>Capítulo II</li>
+            <li>Capítulo III</li>
+        </ol>
+        
+        <p><strong>Algarismos romanos minúsculos (type="i"):</strong></p>
+        <ol type="i">
+            <li>Tópico i</li>
+            <li>Tópico ii</li>
+            <li>Tópico iii</li>
+        </ol>
+    </div>
+    
+    <hr>
+    
+    <!-- ============================================ -->
+    <!-- IFRAME -->
+    <!-- ============================================ -->
+    
+    <h2>3. iFrame - Incorporando Conteúdo</h2>
+    <div class="exemplo">
+        <p><strong>Exemplo 1: Incorporando um vídeo do YouTube</strong></p>
+        <iframe 
+            width="560" 
+            height="315" 
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+            frameborder="0" 
+            allowfullscreen>
+        </iframe>
+        <p><em>Substitua o ID do vídeo pela URL embed do YouTube desejado</em></p>
+        
+        <p><strong>Exemplo 2: Incorporando Google Maps (exemplo genérico)</strong></p>
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.2904631779645!2d-34.89097708468491!3d-8.058703382879796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab18a3d6f89391%3A0x6fb0f9c6b7ac56e8!2sRecife%2C%20PE!5e0!3m2!1spt-BR!2sbr!4v1234567890123" 
+            width="600" 
+            height="450" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
+        <p><em>Este é um exemplo de localização em Recife, PE</em></p>
+    </div>
+    
+    <hr>
+    
+    <!-- ============================================ -->
+    <!-- FORMULÁRIOS -->
+    <!-- ============================================ -->
+    
+    <h2>4. Formulários Completos</h2>
+    
+    <h3>4.1. Formulário de Cadastro Básico</h3>
+    <form action="#" method="POST">
+        <fieldset>
+            <legend>Informações Pessoais</legend>
+            
+            <label for="nome">Nome Completo:</label>
+            <input type="text" id="nome" name="nome" required placeholder="Digite seu nome">
+            
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required placeholder="seu@email.com">
+            
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required minlength="6">
+            
+            <label for="data-nasc">Data de Nascimento:</label>
+            <input type="date" id="data-nasc" name="data_nascimento">
+            
+            <label>Sexo:</label>
+            <input type="radio" id="masc" name="sexo" value="M">
+            <label for="masc" style="display: inline; font-weight: normal;">Masculino</label>
+            
+            <input type="radio" id="fem" name="sexo" value="F">
+            <label for="fem" style="display: inline; font-weight: normal;">Feminino</label>
+            
+            <input type="radio" id="outro" name="sexo" value="O">
+            <label for="outro" style="display: inline; font-weight: normal;">Outro</label>
+        </fieldset>
+        
+        <fieldset>
+            <legend>Endereço</legend>
+            
+            <label for="cidade">Cidade:</label>
+            <select id="cidade" name="cidade">
+                <option value="">Selecione...</option>
+                <option value="recife">Recife</option>
+                <option value="sao-paulo">São Paulo</option>
+                <option value="rio-janeiro">Rio de Janeiro</option>
+                <option value="belo-horizonte">Belo Horizonte</option>
+                <option value="brasilia">Brasília</option>
+            </select>
+            
+            <label for="estado">Estado:</label>
+            <input type="text" id="estado" name="estado" list="estados">
+            <datalist id="estados">
+                <option value="Pernambuco">
+                <option value="São Paulo">
+                <option value="Rio de Janeiro">
+                <option value="Minas Gerais">
+                <option value="Distrito Federal">
+            </datalist>
+        </fieldset>
+        
+        <fieldset>
+            <legend>Preferências</legend>
+            
+            <label>Interesses (pode marcar vários):</label>
+            <input type="checkbox" id="prog" name="interesses" value="programacao">
+            <label for="prog" style="display: inline; font-weight: normal;">Programação</label><br>
+            
+            <input type="checkbox" id="design" name="interesses" value="design">
+            <label for="design" style="display: inline; font-weight: normal;">Design</label><br>
+            
+            <input type="checkbox" id="banco" name="interesses" value="banco-dados">
+            <label for="banco" style="display: inline; font-weight: normal;">Banco de Dados</label><br>
+            
+            <input type="checkbox" id="redes" name="interesses" value="redes">
+            <label for="redes" style="display: inline; font-weight: normal;">Redes</label><br>
+            
+            <label for="cor-favorita">Cor Favorita:</label>
+            <input type="color" id="cor-favorita" name="cor">
+            
+            <label for="numero-sorte">Número da Sorte (1-100):</label>
+            <input type="number" id="numero-sorte" name="numero" min="1" max="100">
+            
+            <label for="hora-disponivel">Horário Disponível:</label>
+            <input type="time" id="hora-disponivel" name="horario">
+        </fieldset>
+        
+        <fieldset>
+            <legend>Mensagem</legend>
+            
+            <label for="mensagem">Deixe uma mensagem:</label>
+            <textarea 
+                id="mensagem" 
+                name="mensagem" 
+                rows="5" 
+                placeholder="Digite sua mensagem aqui...">
+            </textarea>
+        </fieldset>
+        
+        <fieldset>
+            <legend>Anexos</legend>
+            
+            <label for="arquivo">Enviar arquivo:</label>
+            <input type="file" id="arquivo" name="arquivo">
+        </fieldset>
+        
+        <button type="submit">Enviar Cadastro</button>
+        <button type="reset">Limpar Formulário</button>
+    </form>
+    
+    <hr>
+    
+    <h3>4.2. Formulário de Contato Simples</h3>
+    <form action="#" method="POST">
+        <fieldset>
+            <legend>Entre em Contato</legend>
+            
+            <label for="nome-contato">Nome:</label>
+            <input type="text" id="nome-contato" name="nome" required>
+            
+            <label for="email-contato">E-mail:</label>
+            <input type="email" id="email-contato" name="email" required>
+            
+            <label for="assunto">Assunto:</label>
+            <select id="assunto" name="assunto">
+                <option>Dúvida</option>
+                <option>Sugestão</option>
+                <option>Reclamação</option>
+                <option>Elogio</option>
+            </select>
+            
+            <label for="msg-contato">Mensagem:</label>
+            <textarea id="msg-contato" name="mensagem" rows="4" required></textarea>
+            
+            <button type="submit">Enviar Mensagem</button>
+        </fieldset>
+    </form>
+    
+    <hr>
+    
+    <h3>4.3. Exemplo com Datalist (Autocomplete)</h3>
+    <div class="exemplo">
+        <form>
+            <label for="navegador">Navegador Preferido:</label>
+            <input type="text" id="navegador" name="navegador" list="lista-navegadores" 
+                   placeholder="Digite ou escolha...">
+            <datalist id="lista-navegadores">
+                <option value="Google Chrome">
+                <option value="Mozilla Firefox">
+                <option value="Microsoft Edge">
+                <option value="Safari">
+                <option value="Opera">
+                <option value="Brave">
+            </datalist>
+            
+            <p><em>Digite para ver as sugestões ou escolha da lista</em></p>
+        </form>
+    </div>
+    
+    <hr>
+    
+    <footer style="margin-top: 50px; padding: 20px; background-color: #E8F4F8; border-radius: 5px;">
+        <h2>Resumo dos Elementos Aprendidos</h2>
+        <ul>
+            <li><strong>&lt;ul&gt;</strong> e <strong>&lt;ol&gt;</strong> - Listas não ordenadas e ordenadas</li>
+            <li><strong>&lt;li&gt;</strong> - Item de lista</li>
+            <li><strong>&lt;iframe&gt;</strong> - Incorporar conteúdo externo</li>
+            <li><strong>&lt;form&gt;</strong> - Formulário</li>
+            <li><strong>&lt;input&gt;</strong> - Campo de entrada (diversos tipos)</li>
+            <li><strong>&lt;select&gt;</strong> e <strong>&lt;option&gt;</strong> - Menu dropdown</li>
+            <li><strong>&lt;textarea&gt;</strong> - Área de texto multilinha</li>
+            <li><strong>&lt;datalist&gt;</strong> - Lista de sugestões</li>
+            <li><strong>&lt;fieldset&gt;</strong> e <strong>&lt;legend&gt;</strong> - Agrupamento de campos</li>
+        </ul>
+        
+        <p><strong>Dica:</strong> Inspecione o código-fonte (Ctrl+U) para ver todos os exemplos!</p>
+    </footer>
+</body>
+</html>

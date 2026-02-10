@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML: div, span, label + CSS Seletores</title>
+    <style>
+        /* ============================================
+           ESTILOS GERAIS
+           ============================================ */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+        }
+
+        /* Seletor de TAG */
+        h1 {
+            color: #065A82;
+            border-bottom: 3px solid #1C7293;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1C7293;
+            margin-top: 40px;
+        }
+
+        /* ============================================
+           EXEMPLO 1: DIV (Elemento de Bloco)
+           ============================================ */
+        
+        /* Seletor de CLASSE */
+        .secao {
+            background-color: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #1C7293;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .destaque {
+            background-color: #E8F4F8;
+            border: 2px solid #1C7293;
+            padding: 15px;
+            margin: 10px 0;
+        }
+
+        .box {
+            display: inline-block;
+            width: 150px;
+            height: 100px;
+            margin: 10px;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .box-azul {
+            background-color: #065A82;
+            color: white;
+        }
+
+        .box-verde {
+            background-color: #28A745;
+            color: white;
+        }
+
+        .box-laranja {
+            background-color: #FF8C00;
+            color: white;
+        }
+
+        /* ============================================
+           EXEMPLO 2: SPAN (Elemento Inline)
+           ============================================ */
+        
+        .texto-vermelho {
+            color: red;
+            font-weight: bold;
+        }
+
+        .texto-azul {
+            color: blue;
+            font-style: italic;
+        }
+
+        .destaque-amarelo {
+            background-color: yellow;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+
+        .preco {
+            font-size: 24px;
+            font-weight: bold;
+            color: #28A745;
+        }
+
+        /* ============================================
+           EXEMPLO 3: LABEL (Formulários)
+           ============================================ */
+        
+        label {
+            display: block;
+            margin: 10px 0 5px 0;
+            font-weight: bold;
+            color: #065A82;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        /* Pseudo-classe :focus */
+        input:focus {
+            border-color: #1C7293;
+            outline: none;
+            box-shadow: 0 0 5px rgba(28, 114, 147, 0.5);
+        }
+
+        /* ============================================
+           EXEMPLO 4: SELETORES CSS
+           ============================================ */
+
+        /* Seletor de ID */
+        #cabecalho {
+            background: linear-gradient(135deg, #065A82 0%, #1C7293 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        #rodape {
+            background-color: #2C3E50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 50px;
+            border-radius: 8px;
+        }
+
+        /* Seletor Universal */
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Múltiplos seletores */
+        h1, h2, h3 {
+            font-family: 'Arial Black', sans-serif;
+        }
+
+        /* ============================================
+           PSEUDO-CLASSES
+           ============================================ */
+
+        /* Links */
+        a {
+            color: #1C7293;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #065A82;
+            text-decoration: underline;
+        }
+
+        a:active {
+            color: #FF8C00;
+        }
+
+        a:visited {
+            color: #663399;
+        }
+
+        /* Botões */
+        button {
+            background-color: #1C7293;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+        }
+
+        button:hover {
+            background-color: #065A82;
+            transform: scale(1.05);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        /* Listas */
+        ul.lista-estilizada li:first-child {
+            font-weight: bold;
+            color: #065A82;
+        }
+
+        ul.lista-estilizada li:last-child {
+            border-bottom: none;
+        }
+
+        ul.lista-estilizada li:nth-child(even) {
+            background-color: #f0f0f0;
+        }
+
+        ul.lista-estilizada li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* :not() */
+        p:not(.destaque) {
+            color: #555;
+        }
+
+        /* ============================================
+           PSEUDO-ELEMENTOS
+           ============================================ */
+
+        .com-icone::before {
+            content: "✓ ";
+            color: #28A745;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .com-seta::after {
+            content: " →";
+            color: #1C7293;
+            font-weight: bold;
+        }
+
+        .paragrafo-estilizado::first-letter {
+            font-size: 3em;
+            font-weight: bold;
+            color: #065A82;
+            float: left;
+            line-height: 1;
+            margin-right: 5px;
+        }
+
+        .paragrafo-estilizado::first-line {
+            font-weight: bold;
+            color: #1C7293;
+        }
+
+        ::selection {
+            background-color: #FFD700;
+            color: #000;
+        }
+
+        input::placeholder {
+            color: #999;
+            font-style: italic;
+        }
+
+        /* ============================================
+           TABELA DE DEMONSTRAÇÃO
+           ============================================ */
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #1C7293;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #E8F4F8;
+        }
+    </style>
+</head>
+<body>
+    <!-- ID único no cabeçalho -->
+    <div id="cabecalho">
+        <h1 style="color: white; border: none;">HTML: Tags Úteis e CSS Seletores</h1>
+        <p style="font-size: 18px;">Demonstração completa de div, span, label e seletores CSS</p>
+    </div>
+
+    <!-- ============================================
+         SEÇÃO 1: DIV
+         ============================================ -->
+    
+    <div class="secao">
+        <h2>1. Tag &lt;div&gt; - Division (Elemento de Bloco)</h2>
+        <p><strong>Características:</strong> Elemento de bloco que ocupa 100% da largura e quebra linha.</p>
+        
+        <div class="destaque">
+            <h3>Exemplo de div com classe "destaque"</h3>
+            <p>Esta div tem fundo azul claro e borda. É útil para agrupar elementos relacionados.</p>
+        </div>
+
+        <div style="text-align: center; margin-top: 20px;">
+            <div class="box box-azul">
+                <p>Box Azul</p>
+            </div>
+            <div class="box box-verde">
+                <p>Box Verde</p>
+            </div>
+            <div class="box box-laranja">
+                <p>Box Laranja</p>
+            </div>
+        </div>
+
+        <p><strong>Código HTML:</strong></p>
+        <pre style="background: #2C3E50; color: #ECF0F1; padding: 15px; border-radius: 5px; overflow-x: auto;">&lt;div class="secao"&gt;
+  &lt;h2&gt;Título da Seção&lt;/h2&gt;
+  &lt;p&gt;Conteúdo...&lt;/p&gt;
+&lt;/div&gt;</pre>
+    </div>
+
+    <!-- ============================================
+         SEÇÃO 2: SPAN
+         ============================================ -->
+    
+    <div class="secao">
+        <h2>2. Tag &lt;span&gt; - Elemento Inline</h2>
+        <p><strong>Características:</strong> Elemento inline que NÃO quebra linha, usado para estilizar partes de texto.</p>
+        
+        <p>
+            Este é um texto normal com 
+            <span class="texto-vermelho">destaque vermelho</span> e 
+            <span class="texto-azul">texto azul em itálico</span>.
+            Também podemos ter <span class="destaque-amarelo">fundo amarelo</span> em palavras específicas.
+        </p>
+
+        <p>
+            Preço do produto: <span class="preco">R$ 149,90</span>
+        </p>
+
+        <p><strong>Código HTML:</strong></p>
+        <pre style="background: #2C3E50; color: #ECF0F1; padding: 15px; border-radius: 5px; overflow-x: auto;">&lt;p&gt;
+  Texto com &lt;span class="texto-vermelho"&gt;destaque vermelho&lt;/span&gt;
+&lt;/p&gt;</pre>
+    </div>
+
+    <!-- ============================================
+         SEÇÃO 3: LABEL
+         ============================================ -->
+    
+    <div class="secao">
+        <h2>3. Tag &lt;label&gt; - Rótulos de Formulário</h2>
+        <p><strong>Características:</strong> Associa texto descritivo a campos de formulário. Melhora acessibilidade.</p>
+        
+        <form>
+            <label for="nome">Nome Completo:</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo">
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="seu@email.com">
+
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" placeholder="Mínimo 6 caracteres">
+
+            <label>
+                <input type="checkbox" name="aceito" style="width: auto; margin-right: 5px;">
+                Aceito os termos e condições
+            </label>
+
+            <button type="submit">Enviar</button>
+        </form>
+
+        <p><strong>Código HTML:</strong></p>
+        <pre style="background: #2C3E50; color: #ECF0F1; padding: 15px; border-radius: 5px; overflow-x: auto;">&lt;label for="nome"&gt;Nome:&lt;/label&gt;
+&lt;input type="text" id="nome" name="nome"&gt;</pre>
+
+        <p><strong>💡 Dica:</strong> Clique no texto "Nome Completo" acima e veja que o cursor vai automaticamente para o campo de entrada!</p>
+    </div>
+
+    <!-- ============================================
+         SEÇÃO 4: SELETORES CSS
+         ============================================ -->
+    
+    <div class="secao">
+        <h2>4. Seletores CSS</h2>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Sintaxe</th>
+                    <th>Exemplo CSS</th>
+                    <th>Seleciona</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Tag</strong></td>
+                    <td><code>tag</code></td>
+                    <td><code>p { color: blue; }</code></td>
+                    <td>Todos os &lt;p&gt;</td>
+                </tr>
+                <tr>
+                    <td><strong>Classe</strong></td>
+                    <td><code>.nome</code></td>
+                    <td><code>.destaque { background: yellow; }</code></td>
+                    <td>class="destaque"</td>
+                </tr>
+                <tr>
+                    <td><strong>ID</strong></td>
+                    <td><code>#nome</code></td>
+                    <td><code>#cabecalho { padding: 20px; }</code></td>
+                    <td>id="cabecalho"</td>
+                </tr>
+                <tr>
+                    <td><strong>Universal</strong></td>
+                    <td><code>*</code></td>
+                    <td><code>* { margin: 0; }</code></td>
+                    <td>TODOS os elementos</td>
+                </tr>
+                <tr>
+                    <td><strong>Múltiplos</strong></td>
+                    <td><code>sel1, sel2</code></td>
+                    <td><code>h1, h2 { color: blue; }</code></td>
+                    <td>h1 E h2</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ============================================
+         SEÇÃO 5: PSEUDO-CLASSES
+         ============================================ -->
+    
+    <div class="secao">
+        <h2>5. Pseudo-classes</h2>
+        <p>Selecionam elementos baseados em <strong>estado</strong> ou <strong>posição</strong>.</p>
+
+        <h3>Links com estados:</h3>
+        <p>
+            <a href="#" onclick="return false;">Passe o mouse sobre este link</a> |
+            <a href="https://google.com" target="_blank">Link externo (visitado muda de cor)</a>
+        </p>
+
+        <h3>Botões interativos:</h3>
+        <button>Passe o mouse</button>
+        <button>Clique aqui</button>
+
+        <h3>Lista com :first-child, :last-child, :nth-child(even):</h3>
+        <ul class="lista-estilizada">
+            <li>Primeiro item (negrito e azul)</li>
+            <li>Segundo item (fundo cinza - par)</li>
+            <li>Terceiro item</li>
+            <li>Quarto item (fundo cinza - par)</li>
+            <li>Último item (sem borda inferior)</li>
+        </ul>
+
+        <h3>Exemplos de código:</h3>
+        <table>
+            <tr>
+                <th>Pseudo-classe</th>
+                <th>CSS</th>
+                <th>Efeito</th>
+            </tr>
+            <tr>
+                <td><code>:hover</code></td>
+                <td><code>a:hover { color: red; }</code></td>
+                <td>Mouse sobre o elemento</td>
+            </tr>
+            <tr>
+                <td><code>:active</code></td>
+                <td><code>button:active { scale: 0.95; }</code></td>
+                <td>Enquanto clica</td>
+            </tr>
+            <tr>
+                <td><code>:focus</code></td>
+                <td><code>input:focus { border: 2px solid blue; }</code></td>
+                <td>Campo ativo (clique nos campos acima!)</td>
+            </tr>
+            <tr>
+                <td><code>:first-child</code></td>
+                <td><code>li:first-child { font-weight: bold; }</code></td>
+                <td>Primeiro filho</td>
+            </tr>
+            <tr>
+                <td><code>:nth-child(even)</code></td>
+                <td><code>tr:nth-child(even) { background: #f9f9f9; }</code></td>
+                <td>Filhos pares (esta tabela!)</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- ============================================
+         SEÇÃO 6: PSEUDO-ELEMENTOS
+         ============================================ -->
+    
+    <div class="secao">
+        <h2>6. Pseudo-elementos</h2>
+        <p>Estilizam <strong>partes específicas</strong> de elementos. Usam <code>::</code> (dois pontos).</p>
+
+        <h3>::before e ::after</h3>
+        <p class="com-icone">Este texto tem um ícone ✓ antes (::before)</p>
+        <p class="com-seta">Este texto tem uma seta depois (::after)</p>
+
+        <h3>::first-letter e ::first-line</h3>
+        <p class="paragrafo-estilizado">
+            Este parágrafo demonstra o uso de ::first-letter (letra grande) e ::first-line (primeira linha em negrito).
+            A primeira letra fica maior e em destaque, enquanto toda a primeira linha fica em negrito e colorida.
+            O resto do texto mantém a formatação normal.
+        </p>
+
+        <h3>::selection</h3>
+        <p><strong>Selecione este texto com o mouse</strong> e veja o fundo mudar para amarelo dourado!</p>
+
+        <h3>::placeholder</h3>
+        <p>Os campos de formulário acima usam <code>::placeholder</code> para estilizar o texto de dica.</p>
+
+        <h3>Exemplos de código:</h3>
+        <table>
+            <tr>
+                <th>Pseudo-elemento</th>
+                <th>CSS</th>
+                <th>Efeito</th>
+            </tr>
+            <tr>
+                <td><code>::before</code></td>
+                <td><code>p::before { content: "→ "; }</code></td>
+                <td>Adiciona conteúdo antes</td>
+            </tr>
+            <tr>
+                <td><code>::after</code></td>
+                <td><code>p::after { content: " ←"; }</code></td>
+                <td>Adiciona conteúdo depois</td>
+            </tr>
+            <tr>
+                <td><code>::first-letter</code></td>
+                <td><code>p::first-letter { font-size: 2em; }</code></td>
+                <td>Primeira letra</td>
+            </tr>
+            <tr>
+                <td><code>::first-line</code></td>
+                <td><code>p::first-line { font-weight: bold; }</code></td>
+                <td>Primeira linha</td>
+            </tr>
+            <tr>
+                <td><code>::selection</code></td>
+                <td><code>::selection { background: yellow; }</code></td>
+                <td>Texto selecionado</td>
+            </tr>
+            <tr>
+                <td><code>::placeholder</code></td>
+                <td><code>input::placeholder { color: #999; }</code></td>
+                <td>Placeholder de input</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- ============================================
+         RODAPÉ
+         ============================================ -->
+    
+    <div id="rodape">
+        <h3>📚 Resumo</h3>
+        <p><strong>&lt;div&gt;</strong> = bloco | <strong>&lt;span&gt;</strong> = inline | <strong>&lt;label&gt;</strong> = formulários</p>
+        <p><strong>Seletores:</strong> tag, .classe, #id, *, múltiplos</p>
+        <p><strong>Pseudo-classes:</strong> :hover, :active, :focus, :first-child, :nth-child()</p>
+        <p><strong>Pseudo-elementos:</strong> ::before, ::after, ::first-letter, ::selection</p>
+        <p style="margin-top: 20px;"><em>Inspecione o código (F12) para ver todos os estilos CSS!</em></p>
+    </div>
+
+</body>
+</html>
